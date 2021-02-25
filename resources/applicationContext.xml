@@ -11,6 +11,11 @@
           class="org.example.Cat">
     </bean>
 
+    <bean id="myPerson"
+          class="org.example.Person">
+        <constructor-arg ref="myPet"/>
+    </bean>
+
 <!--    <bean id="myPet"-->
 <!--          class="org.example.Cat">-->
 <!--    </bean>-->
