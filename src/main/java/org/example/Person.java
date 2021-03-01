@@ -8,14 +8,14 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 //@Component
-@PropertySource("classpath:app.properties")
+//@PropertySource("classpath:app.properties")
 public class Person {
 //    @Autowired
 //    @Qualifier("catBean")
     private Pet pet;
-//    @Value("${person.surname}")
+    @Value("${person.surname}")
     private String surname;
-//    @Value("${person.age}")
+    @Value("${person.age}")
     private int age;
 
     public Person(Pet pet) {
