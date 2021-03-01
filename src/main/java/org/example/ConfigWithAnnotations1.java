@@ -2,7 +2,7 @@ package org.example;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-// less 14 tregulov
+// less 14, 15, 16 tregulov
 public class ConfigWithAnnotations1 {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context =
@@ -10,10 +10,8 @@ public class ConfigWithAnnotations1 {
 
         Person myPerson = context.getBean("person", Person.class);
         myPerson.callMyPet();
-
-        Cat myCat = context.getBean("catBean", Cat.class);
-        myCat.say();
-
+//        Cat myCat = context.getBean("catBean", Cat.class);
+//        myCat.say();
         context.close();
 
     }
