@@ -20,7 +20,7 @@ public class Person {
 
     @Autowired
     public Person(@Qualifier("catBean") Pet pet) {
-        System.out.println("Person bean is created");
+        System.out.println(">Person bean is created");
         this.pet = pet;
     }
 
