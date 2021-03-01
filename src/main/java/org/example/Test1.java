@@ -9,10 +9,11 @@ public class Test1 {
                 new ClassPathXmlApplicationContext("applicationContext.xml");
 
         Person person = context.getBean("myPerson", Person.class);
+        person.callMyPet();
+
         System.out.println(person.getSurname());
         System.out.println(person.getAge());
 
-//        person.callMyPet();
 
         context.close();
 
