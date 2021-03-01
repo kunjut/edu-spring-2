@@ -3,7 +3,7 @@ package org.example;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component("catBean")
+//@Component("catBean")
 @Scope("prototype")
 public class Cat implements Pet {
     public Cat() {
