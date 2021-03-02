@@ -5,31 +5,30 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class Test2 {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Test3 {
     public static void main(String[] args) {
         SessionFactory sessionFactory = new Configuration()
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Employee.class)
                 .buildSessionFactory();
 
-        Session session = sessionFactory.getCurrentSession();
-
         try {
-            Employee emp = new Employee("Elena","Ivanova","Sales",750);
+            Session session = sessionFactory.getCurrentSession();
             session.beginTransaction();
-            session.save(emp);
+
+            List<Employee> employeeList = session.createQuery("from Employee where name = 'Elena' and salary > 760")
+                    .getResultList();
+
+            for (Employee emp: employeeList) {
+                System.out.println(emp);
+            }
+
             session.getTransaction().commit();
 
             System.out.println("Done!");
-
-//            int myId = emp.getId();
-//
-//            session = sessionFactory.getCurrentSession();
-//            session.beginTransaction();
-//            Employee employee = session.get(Employee.class, myId);
-//            session.getTransaction().commit();
-//
-//            System.out.println(employee);
 
         } finally {
             sessionFactory.close();
