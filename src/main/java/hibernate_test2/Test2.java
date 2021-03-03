@@ -35,7 +35,8 @@ public class Test2 {
 
             session.beginTransaction();
 
-            Detail detail = session.get(Detail.class, 4);
+            Detail detail = session.get(Detail.class, 1);
+            detail.getEmployee().setEmpDetail(null);
             session.delete(detail);
 
             session.getTransaction().commit();
