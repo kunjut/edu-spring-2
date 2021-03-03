@@ -36,7 +36,7 @@ public class Test2 {
             session.beginTransaction();
 
             Detail detail = session.get(Detail.class, 4);
-            System.out.println(detail.getEmployee());
+            session.delete(detail);
 
             session.getTransaction().commit();
             System.out.println("Done!");
